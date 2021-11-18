@@ -29,7 +29,6 @@
   },
   "engines": {
     "node": "14.15.0",
-    "npm": "6.9.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~12.1.4",
