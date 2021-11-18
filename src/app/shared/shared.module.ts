@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -12,7 +13,9 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
-import { ScrollingModule } from '@angular/cdk/scrolling';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+
 
 //Components
 import { SearchComponent } from 'src/app/components/search/search.component';
@@ -34,6 +37,7 @@ import { DialogQuestionComponent } from '../components/dialog-question/dialog-qu
   imports: [
     FormsModule,
     CommonModule,
+    MatButtonModule,
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
@@ -45,7 +49,8 @@ import { DialogQuestionComponent } from '../components/dialog-question/dialog-qu
     MatCardModule,
     MatDialogModule,
     ScrollingModule,
-    MatButtonModule,
+    MatProgressSpinnerModule,
+    MatProgressBarModule
   ],
   exports: [
     FormsModule,
@@ -67,6 +72,8 @@ import { DialogQuestionComponent } from '../components/dialog-question/dialog-qu
     MatCardModule,
     MatDialogModule,
     ScrollingModule,
+    MatProgressSpinnerModule,
+    MatProgressBarModule
   ],
 })
 export class SharedModule {}

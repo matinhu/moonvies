@@ -14,18 +14,22 @@ export class HomeComponent implements OnInit {
     {
       id: 0,
       nome: 'Streaming',
+      query: 'streaming'
     },
     {
       id: 1,
       nome: 'Na TV',
+      query: 'on-tv'
     },
     {
       id: 2,
       nome: 'Para Alugar',
+      query: 'for-rent'
     },
     {
       id: 3,
       nome: 'Nos Cinemas',
+      query: 'in-theatres'
     },
   ];
   public filmesPopulares: any [] = [];
@@ -40,7 +44,7 @@ export class HomeComponent implements OnInit {
 
   clickBuscar() {}
   async carregarPopulares() {
-    const req: any = await this.movieService.getPopulares();
+    const req: any = await this.movieService.getPopulares(this.popularSelecionado.query);
     if (req && req.results) {
       console.log(req.results);
       this.filmesPopulares = req.results;

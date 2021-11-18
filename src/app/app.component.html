@@ -1,3 +1,7 @@
+<div  *ngIf="inProgress | async">
+  <mat-progress-bar mode="indeterminate" *ngIf="inProgress | async">    
+  </mat-progress-bar>
+</div>
 <div>
   <mat-toolbar color="primary" class="sticky">
     <div fxShow="true" fxHide.gt-sm="true">

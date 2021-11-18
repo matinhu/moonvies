@@ -10,8 +10,8 @@ export class TheMovieDbService {
 
   constructor(private httpService: HttpService) {}
 
-  getPopulares() {
-    return this.httpService.get(`${this.urlBase}popular?api_key=${this.apiKey}&language=pt-BR`)
+  getPopulares(tipo?: string) {
+    return this.httpService.get(`${this.urlBase}popular?api_key=${this.apiKey}${tipo? `&group=${tipo}` : ''}&language=pt-BR`)
   }
 
 
