@@ -64,6 +64,15 @@
   width: 150px;
 }
 
+.detalhe.movieInfo {
+  top: -230px;
+  color: black !important;
+}
+.full.movieCard {
+  min-height: calc(150px * 2.30) !important;
+  height: calc(150px * 2.30) !important;
+}
+
 .movieName {
   font-weight: bolder;
   position: relative;
@@ -72,4 +81,13 @@
 .movieDate {
   position: relative;
   width: 200px;
+}
+
+.full {
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+  border: 1px solid #e3e3e3;
+  background-color: #fff;
+  color: black;
+  position: relative;
+  overflow: hidden;
 }

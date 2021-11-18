@@ -10,6 +10,7 @@ export class RatingComponent implements OnInit, OnChanges {
   @Input() filme: any = {};
   @Input() diameter!: number;
   @Input() type: string = 'default';
+  @Input() full: boolean = false;
   @ViewChild('customSpinner', { static: false }) customSpinner!: MatSpinner;
   @ViewChild('customSpinnerBackground', { static: false }) customSpinnerBackground!: MatSpinner;
   constructor() {}

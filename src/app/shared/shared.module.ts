@@ -26,6 +26,8 @@ import { DialogMessageComponent } from '../components/dialog-message/dialog-mess
 import { DialogQuestionComponent } from '../components/dialog-question/dialog-question.component';
 import { AutoOpenMenuComponent } from 'src/app/components/auto-open-menu/auto-open-menu.component';
 import { RatingComponent } from 'src/app/components/rating/rating.component';
+import { DetalhesComponent } from '../pages/movie/detalhes/detalhes.component';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { RatingComponent } from 'src/app/components/rating/rating.component';
     DialogMessageComponent,
     DialogQuestionComponent,
     RatingComponent,
+    DetalhesComponent,
+    AutoOpenMenuComponent
   ],
   imports: [
     FormsModule,
@@ -54,7 +58,9 @@ import { RatingComponent } from 'src/app/components/rating/rating.component';
     ScrollingModule,
     MatProgressSpinnerModule,
     MatProgressBarModule,
-    MatGridListModule
+    MatGridListModule,
+    MatMenuModule,
+    
   ],
   exports: [
     FormsModule,
@@ -64,6 +70,7 @@ import { RatingComponent } from 'src/app/components/rating/rating.component';
     ItemFilmeComponent,
     DialogMessageComponent,
     DialogQuestionComponent,
+    DetalhesComponent,
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
@@ -79,7 +86,9 @@ import { RatingComponent } from 'src/app/components/rating/rating.component';
     MatProgressSpinnerModule,
     MatProgressBarModule,
     MatGridListModule,
+    MatMenuModule,
     RatingComponent,
+    AutoOpenMenuComponent
   ],
 })
 export class SharedModule {}

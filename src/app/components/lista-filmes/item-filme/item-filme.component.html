@@ -1,12 +1,14 @@
-<mat-card class="mr ml movieCard">
-  <img
-    mat-card-image
-    [src]="imgPath + filme?.poster_path"
-    [matTooltip]="filme?.title"
-  />
-</mat-card>
-<app-rating [filme]="filme" [type]="'default'"></app-rating>
-<div class="vgroup movieInfo">
-  <span class="movieName">{{ filme?.title }}</span>
-  <span class="movieDate">{{ filme?.release_date | date: 'longDate' }}</span>
+<div >
+  <mat-card class="mr ml movieCard" [ngClass]="{ full: full }">
+    <img
+      mat-card-image
+      [src]="imgPath + filme?.poster_path"
+      [matTooltip]="filme?.title"
+    />
+  </mat-card>
+  <app-rating [full]="full" [filme]="filme" [type]="'default'"></app-rating>
+  <div class="vgroup movieInfo" [ngClass]="{detalhe: full}">
+    <span class="movieName">{{ filme?.title }}</span>
+    <span class="movieDate">{{ filme?.release_date | date: "longDate" }}</span>
+  </div>
 </div>

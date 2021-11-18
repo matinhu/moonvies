@@ -1,5 +1,5 @@
 <div [ngClass]="{ zoom: type !== 'default' }">
-  <div class="rating" [ngClass]="{ big: type !== 'default' }">
+  <div class="rating" [ngClass]="{ big: type !== 'default', full: full }">
     <div class="fundo" [ngClass]="{ big: type !== 'default' }">
       <label>{{ filme?.vote_average }}<small>%</small></label>
     </div>

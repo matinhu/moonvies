@@ -1,0 +1,11 @@
+<mat-card class="mr ml movieCard">
+  <img
+    mat-card-image
+    [src]="imgPath + pessoa?.poster_path"
+    [matTooltip]="pessoa?.title"
+  />
+</mat-card>
+<div class="vgroup movieInfo">
+  <span class="movieName">{{ pessoa?.title }}</span>
+  <span class="movieDate">{{ pessoa?.release_date | date: "longDate" }}</span>
+</div>

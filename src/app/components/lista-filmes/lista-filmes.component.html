@@ -1,5 +1,6 @@
 <div class="cdk-virtual-scroll-data-source">
   <cdk-virtual-scroll-viewport
+    *ngIf="!full"
     orientation="horizontal"
     itemSize="200"
     class="viewport"
@@ -7,6 +8,25 @@
   >
     <div *cdkVirtualFor="let filme of filmes" class="item oh">
       <app-item-filme
+        [full]="full"
+        [id]="'R' + filme.id"
+        [filme]="filme"
+        (click)="clickSelecao(filme)"
+      >
+      </app-item-filme>
+    </div>
+  </cdk-virtual-scroll-viewport>
+</div>
+
+<div class="cdk-virtual-scroll-data-source full">
+  <cdk-virtual-scroll-viewport
+    itemSize="200"
+    orientation="vertical"
+    class="full viewport"
+  >
+    <div *cdkVirtualFor="let filme of filmes" class="full item oh">
+      <app-item-filme
+        [full]="full"
         [id]="'R' + filme.id"
         [filme]="filme"
         (click)="clickSelecao(filme)"

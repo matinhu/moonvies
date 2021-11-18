@@ -1,0 +1,17 @@
+<div class="cdk-virtual-scroll-data-source">
+  <cdk-virtual-scroll-viewport
+    orientation="horizontal"
+    itemSize="200"
+    class="viewport"
+    style="overflow-y: hidden !important"
+  >
+    <div *cdkVirtualFor="let pessoa of pessoas" class="item oh">
+      <app-item-pessoa
+        [id]="'R' + pessoa.id"
+        [pessoa]="pessoas"
+        (click)="clickSelecao(pessoa)"
+      >
+      </app-item-pessoa>
+    </div>
+  </cdk-virtual-scroll-viewport>
+</div>

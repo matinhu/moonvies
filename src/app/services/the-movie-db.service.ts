@@ -17,5 +17,11 @@ export class TheMovieDbService {
     return this.httpService.get(`${this.urlBase}${idFilme}?api_key=${this.apiKey}&language=pt-BR`)
   }
 
+  getByTipo(tipo: string, page?: number) {
+    return this.httpService.get(`${this.urlBase}${tipo}?api_key=${this.apiKey}&language=pt-BR&page=${page?page:1}`)
+  }
+
+
+
 
 }

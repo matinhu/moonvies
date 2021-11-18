@@ -12,19 +12,19 @@
     <div class="logo" routerLink="/"></div>
     <div fxShow="true" fxHide.lt-md="true">
       <app-auto-open-menu>
-        <div trigger>Filmes</div>
+        <div trigger >Filmes</div>
         <div content>
-          <span mat-menu-item
+          <span mat-menu-item (click)="goTo('movie')"
             ><mat-icon class="mr black">rocket_launch</mat-icon>Populares</span
           >
-          <span mat-menu-item
+          <span mat-menu-item (click)="goTo('movie/now-playing')"
             ><mat-icon class="mr black">star_rate</mat-icon>Em cartaz</span
           >
-          <span mat-menu-item
+          <span mat-menu-item (click)="goTo('movie/upcoming')"
             ><mat-icon class="mr black">campaign</mat-icon>Próximas
             Estreias</span
           >
-          <span mat-menu-item
+          <span mat-menu-item (click)="goTo('movie/top-rated')"
             ><mat-icon class="mr black">thumb_up</mat-icon>Mais bem
             avaliados</span
           >
@@ -101,7 +101,7 @@
   <mat-sidenav-container fxFlexFill class="example-container">
     <div class="blurBg"></div>
     <mat-sidenav
-      style="width: 90vw"
+      class="likeTheMovieDB"
       color="primary"
       #sidenav
       fxLayout="column"
@@ -109,10 +109,10 @@
       opened="false"
       fxHide.gt-sm="true"
     >
-      <div fxLayout="column w100" style="align-items: baseline !important">
-        <button mat-button [matMenuTriggerFor]="filmes">Filmes</button>
+    <div fxLayout="column w100 baseline" style="padding: 10px;">
+        <button mat-button [matMenuTriggerFor]="filmes"><span class="big">Filmes</span></button>
         <mat-menu #filmes="matMenu">
-          <button mat-menu-item>
+          <button mat-menu-item (click)="goTo('movies/populares')">
             <mat-icon class="mr black">rocket_launch</mat-icon>Populares
           </button>
           <button mat-menu-item>

@@ -75,3 +75,17 @@ button {
 .mat-sidenav-backdrop.mat-sidenav-shown {
   background-color: transparent !important;
 }
+
+.likeTheMovieDB {
+  width: 90vw;
+  backdrop-filter: blur(20px);
+  background: #032541cf;
+}
+
+.baseline {
+  align-items: baseline !important;
+}
+
+.bigFont {
+  font-size: 30px !important;
+}

@@ -13,3 +13,24 @@
   width: 200px;
   height: 100%;
 }
+
+.full.cdk-virtual-scroll-data-source .viewport {
+  justify-content: center !important;
+  // text-align: center;
+  flex: auto;
+  flex-direction: column;
+  height: calc(100vh - 64px);
+  display: inline-block !important;
+  
+  box-shadow: inset -20px -10px 30px 5px white;
+}
+
+.full.cdk-virtual-scroll-data-source .viewport .cdk-virtual-scroll-content-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.full.cdk-virtual-scroll-data-source .item {
+  width: 200px;
+  height: 400px !important;
+}

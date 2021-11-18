@@ -5,6 +5,10 @@
   cursor: pointer;
 }
 
+.full.rating{
+    bottom: 230px !important;
+}
+
 :host ::ng-deep .track circle {
   stroke-opacity: 1 !important;
 }

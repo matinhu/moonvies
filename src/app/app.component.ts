@@ -1,4 +1,5 @@
 import { ChangeDetectorRef, Component, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { HttpService } from 'src/app/services/http.service';
 
@@ -16,7 +17,8 @@ export class AppComponent {
 
   constructor(
     private httpService: HttpService,
-    private cdref: ChangeDetectorRef
+    private cdref: ChangeDetectorRef,
+    private router: Router
   ) { 
     this.inProgress = this.httpService.inProgress;
   }
@@ -24,4 +26,8 @@ export class AppComponent {
     this.cdref.detectChanges();
   }
 
+  goTo(url: string) {
+    this.router.navigate([url]);
+
+  }
 }

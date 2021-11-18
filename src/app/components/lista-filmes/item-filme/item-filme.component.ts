@@ -9,6 +9,7 @@ import { MatSpinner } from '@angular/material/progress-spinner';
 export class ItemFilmeComponent implements OnInit, OnChanges {
   public imgPath: string = 'https://image.tmdb.org/t/p/w500';
   @Input() filme: any = {};
+  @Input() full: boolean = false;
   @ViewChild('customSpinner', { static: false }) customSpinner!: MatSpinner;
   @ViewChild('customSpinnerBackground', { static: false }) customSpinnerBackground!: MatSpinner;
   constructor() {}

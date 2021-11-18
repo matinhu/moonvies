@@ -9,32 +9,30 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 
-
 @Component({
-  selector: 'app-lista-filmes',
-  templateUrl: './lista-filmes.component.html',
-  styleUrls: ['./lista-filmes.component.scss'],
+  selector: 'app-lista-pessoas',
+  templateUrl: './lista-pessoas.component.html',
+  styleUrls: ['./lista-pessoas.component.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ListaFilmesComponent implements OnInit, OnChanges {
-  @Input() filmes: any = [];
-  @Input() full: boolean = false;
+export class ListaPessoasComponent implements OnInit, OnChanges {
+  @Input() pessoas: any = [];
   @Output() goToMovie = new EventEmitter<any>();
 
   constructor() {}
 
   async ngOnInit() {
-    await this.carregarFilmes();
+    await this.carregarPessoas();
   }
 
-  async carregarFilmes() {
+  async carregarPessoas() {
     const genero: any = '';
     const tipo: any = '';
   }
   ngOnChanges() {
-    if (this.filmes) {
-      console.log(this.filmes);
+    if (this.pessoas) {
+      console.log(this.pessoas);
     }
   }
 

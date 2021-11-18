@@ -16,10 +16,11 @@ import { registerLocaleData } from '@angular/common';
 import ptBr from '@angular/common/locales/pt';
 import { MovieComponent } from './pages/movie/movie.component';
 import { AutoOpenMenuComponent } from './components/auto-open-menu/auto-open-menu.component';
-import { RatingComponent } from './components/rating/rating.component';
+import { ListaPessoasComponent } from './components/lista-pessoas/lista-pessoas.component';
+import { ItemPessoaComponent } from './components/lista-pessoas/item-pessoa/item-pessoa.component';
 registerLocaleData(ptBr);
 @NgModule({
-  declarations: [AppComponent, HomeComponent, MovieComponent, AutoOpenMenuComponent],
+  declarations: [AppComponent, HomeComponent, MovieComponent, ListaPessoasComponent, ItemPessoaComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -29,7 +30,9 @@ registerLocaleData(ptBr);
     MatMenuModule,
     HttpClientModule,
     HttpClientJsonpModule,
+    // AutoOpenMenuComponent
   ],
+  exports: [],
   providers: [
     HttpService,
     GlobalService,
