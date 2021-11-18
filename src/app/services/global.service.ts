@@ -30,7 +30,7 @@ export class GlobalService {
         resolve(result);
       });
     });
-}
+  }
 
   public abrirModal(
     component: any,
@@ -84,7 +84,7 @@ export class GlobalService {
   }
 
   logout() {
-    localStorage.clear();  
+    localStorage.clear();
   }
 
   downloadAnexoContent(anexo: any, tipo: string, filename: string) {
@@ -124,5 +124,14 @@ export class GlobalService {
     }
     let blob = new Blob(byteArrays, { type: contentType });
     return blob;
+  }
+
+  public getHoursAndMinutesByMinutes(totalMinutes: number): string {
+    const num = totalMinutes;
+    const hours = num / 60;
+    const rhours = Math.floor(hours);
+    const minutes = (hours - rhours) * 60;
+    const rminutes = Math.round(minutes);
+    return `${rhours}h ${rminutes}m`;
   }
 }

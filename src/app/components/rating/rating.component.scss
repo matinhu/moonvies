@@ -1,0 +1,76 @@
+.rating {
+  position: relative;
+  bottom: 115px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+:host ::ng-deep .track circle {
+  stroke-opacity: 1 !important;
+}
+
+.track {
+  position: relative;
+  bottom: -40px;
+}
+
+.fundo {
+  position: relative;
+  background-color: black;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: inline-block;
+  bottom: -88px;
+  left: -2px;
+  label {
+    color: white;
+    position: absolute;
+    left: 12px;
+    top: 14px;
+    font-size: small;
+    font-weight: bolder;
+    small {
+      position: absolute;
+      position: absolute;
+      top: -5px;
+      font-size: 7px;
+      font-weight: 300;
+    }
+  }
+}
+
+.big.track {
+  bottom: -60px;
+}
+
+.big.rating {
+  bottom: 105px;
+}
+
+.big.fundo {
+  width: 64px;
+  height: 64px;
+  bottom: -122px;
+  label {
+    left: 17px;
+    top: 23px;
+    font-size: 24px;
+  }
+}
+
+.zoom {
+  cursor: pointer;
+  transition: transform 0.2s;
+  width: 85px;
+  height: 70px;
+  //   margin: 0 auto;
+}
+
+.zoom:hover {
+  transform: scale(
+    1.1
+  ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+//class="zoom"

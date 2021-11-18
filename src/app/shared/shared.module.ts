@@ -15,7 +15,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-
+import { MatGridListModule } from '@angular/material/grid-list';
 
 //Components
 import { SearchComponent } from 'src/app/components/search/search.component';
@@ -24,6 +24,8 @@ import { ListaFilmesComponent } from '../components/lista-filmes/lista-filmes.co
 import { ItemFilmeComponent } from '../components/lista-filmes/item-filme/item-filme.component';
 import { DialogMessageComponent } from '../components/dialog-message/dialog-message.component';
 import { DialogQuestionComponent } from '../components/dialog-question/dialog-question.component';
+import { AutoOpenMenuComponent } from 'src/app/components/auto-open-menu/auto-open-menu.component';
+import { RatingComponent } from 'src/app/components/rating/rating.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,7 @@ import { DialogQuestionComponent } from '../components/dialog-question/dialog-qu
     ItemFilmeComponent,
     DialogMessageComponent,
     DialogQuestionComponent,
+    RatingComponent,
   ],
   imports: [
     FormsModule,
@@ -50,7 +53,8 @@ import { DialogQuestionComponent } from '../components/dialog-question/dialog-qu
     MatDialogModule,
     ScrollingModule,
     MatProgressSpinnerModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatGridListModule
   ],
   exports: [
     FormsModule,
@@ -73,7 +77,9 @@ import { DialogQuestionComponent } from '../components/dialog-question/dialog-qu
     MatDialogModule,
     ScrollingModule,
     MatProgressSpinnerModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatGridListModule,
+    RatingComponent,
   ],
 })
 export class SharedModule {}

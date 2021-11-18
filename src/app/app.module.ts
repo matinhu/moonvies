@@ -14,9 +14,12 @@ import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { registerLocaleData } from '@angular/common';
 import ptBr from '@angular/common/locales/pt';
+import { MovieComponent } from './pages/movie/movie.component';
+import { AutoOpenMenuComponent } from './components/auto-open-menu/auto-open-menu.component';
+import { RatingComponent } from './components/rating/rating.component';
 registerLocaleData(ptBr);
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent, HomeComponent, MovieComponent, AutoOpenMenuComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

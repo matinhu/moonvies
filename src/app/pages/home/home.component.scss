@@ -1,3 +1,4 @@
+@import "../../../assets/scss/variables.scss";
 .bemVindo {
   background-image: linear-gradient(
       to right,
@@ -14,7 +15,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   color: #fff;
-  max-width: var(--maxPrimaryPageWidth);
+  max-width: $width;
 }
 
 
@@ -96,8 +97,3 @@
     color: #032541 !important;
 }
 
-@media only screen and (min-width: 1400px) {
-  html {
-    --maxPrimaryPageWidth: 1300px;
-  }
-}

@@ -13,6 +13,9 @@ export class TheMovieDbService {
   getPopulares(tipo?: string) {
     return this.httpService.get(`${this.urlBase}popular?api_key=${this.apiKey}${tipo? `&group=${tipo}` : ''}&language=pt-BR`)
   }
+  getById(idFilme: number) {
+    return this.httpService.get(`${this.urlBase}${idFilme}?api_key=${this.apiKey}&language=pt-BR`)
+  }
 
 
 }

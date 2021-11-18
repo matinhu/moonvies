@@ -1,0 +1,24 @@
+<div [ngClass]="{ zoom: type !== 'default' }">
+  <div class="rating" [ngClass]="{ big: type !== 'default' }">
+    <div class="fundo" [ngClass]="{ big: type !== 'default' }">
+      <label>{{ filme?.vote_average }}<small>%</small></label>
+    </div>
+    <mat-spinner
+      class="track"
+      [ngClass]="{ big: type !== 'default' }"
+      mode="determinate"
+      value="100"
+      [diameter]="type === 'default' ? 40 : 60"
+      #customSpinnerBackground
+    ></mat-spinner>
+    <mat-spinner
+      mode="determinate"
+      [value]="filme?.vote_average"
+      [diameter]="type === 'default' ? 40 : 60"
+      [strokeWidth]="4"
+      [id]="'spin' + filme.id"
+      #customSpinner
+    >
+    </mat-spinner>
+  </div>
+</div>

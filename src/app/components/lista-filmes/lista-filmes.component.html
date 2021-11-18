@@ -7,7 +7,6 @@
   >
     <div *cdkVirtualFor="let filme of filmes" class="item oh">
       <app-item-filme
-        
         [id]="'R' + filme.id"
         [filme]="filme"
         (click)="clickSelecao(filme)"

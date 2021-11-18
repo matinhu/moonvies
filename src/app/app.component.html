@@ -1,17 +1,37 @@
-<div  *ngIf="inProgress | async">
-  <mat-progress-bar mode="indeterminate" *ngIf="inProgress | async">    
+<div *ngIf="inProgress | async">
+  <mat-progress-bar mode="indeterminate" *ngIf="inProgress | async">
   </mat-progress-bar>
 </div>
 <div>
   <mat-toolbar color="primary" class="sticky">
     <div fxShow="true" fxHide.gt-sm="true">
-      <button mat-icon-button (click)="sidenav.toggle()">
+      <button mat-icon-button (click)="sidenav.toggle()" style="z-index: 1050">
         <mat-icon>menu</mat-icon>
       </button>
     </div>
     <div class="logo" routerLink="/"></div>
     <div fxShow="true" fxHide.lt-md="true">
-      <button mat-button [matMenuTriggerFor]="filmes">Filmes</button>
+      <app-auto-open-menu>
+        <div trigger>Filmes</div>
+        <div content>
+          <span mat-menu-item
+            ><mat-icon class="mr black">rocket_launch</mat-icon>Populares</span
+          >
+          <span mat-menu-item
+            ><mat-icon class="mr black">star_rate</mat-icon>Em cartaz</span
+          >
+          <span mat-menu-item
+            ><mat-icon class="mr black">campaign</mat-icon>Próximas
+            Estreias</span
+          >
+          <span mat-menu-item
+            ><mat-icon class="mr black">thumb_up</mat-icon>Mais bem
+            avaliados</span
+          >
+        </div>
+      </app-auto-open-menu>
+
+      <!-- <button mat-button [matMenuTriggerFor]="filmes">Filmes</button>
       <mat-menu #filmes="matMenu">
         <button mat-menu-item>
           <mat-icon class="mr black">rocket_launch</mat-icon>Populares
@@ -25,9 +45,13 @@
         <button mat-menu-item>
           <mat-icon class="mr black">thumb_up</mat-icon>Mais bem avaliados
         </button>
-      </mat-menu>
+      </mat-menu> -->
     </div>
-    <div class="right">
+    <div
+      class="right"
+      matTooltip="Perfil e Configurações"
+      matTooltipPosition="before"
+    >
       <button mat-icon-button class="mr" [matMenuTriggerFor]="beforeMenu">
         <mat-icon>account_circle</mat-icon>
       </button>
@@ -77,7 +101,7 @@
   <mat-sidenav-container fxFlexFill class="example-container">
     <div class="blurBg"></div>
     <mat-sidenav
-      style="width: 90vw;"
+      style="width: 90vw"
       color="primary"
       #sidenav
       fxLayout="column"
@@ -87,20 +111,20 @@
     >
       <div fxLayout="column w100" style="align-items: baseline !important">
         <button mat-button [matMenuTriggerFor]="filmes">Filmes</button>
-      <mat-menu #filmes="matMenu">
-        <button mat-menu-item>
-          <mat-icon class="mr black">rocket_launch</mat-icon>Populares
-        </button>
-        <button mat-menu-item>
-          <mat-icon class="mr black">star_rate</mat-icon>Em cartaz
-        </button>
-        <button mat-menu-item>
-          <mat-icon class="mr black">campaign</mat-icon>Próximas Estreias
-        </button>
-        <button mat-menu-item>
-          <mat-icon class="mr black">thumb_up</mat-icon>Mais bem avaliados
-        </button>
-      </mat-menu>
+        <mat-menu #filmes="matMenu">
+          <button mat-menu-item>
+            <mat-icon class="mr black">rocket_launch</mat-icon>Populares
+          </button>
+          <button mat-menu-item>
+            <mat-icon class="mr black">star_rate</mat-icon>Em cartaz
+          </button>
+          <button mat-menu-item>
+            <mat-icon class="mr black">campaign</mat-icon>Próximas Estreias
+          </button>
+          <button mat-menu-item>
+            <mat-icon class="mr black">thumb_up</mat-icon>Mais bem avaliados
+          </button>
+        </mat-menu>
       </div>
     </mat-sidenav>
     <mat-sidenav-content fxFlexFill>

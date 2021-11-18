@@ -23,7 +23,7 @@
   <section class="populares">
     <div class="hgroup black">
       <!-- <strong class="medium mr20 baseline">Os Mais Populares</strong> -->
-      <app-custom-combo
+    <app-custom-combo
         [style]="'width: 283px; margin-bottom: 10px'"
         label="Os Mais Populares"
         [dataProvider]="populares"
@@ -37,6 +37,6 @@
       </app-custom-combo>
     </div>
 
-    <app-lista-filmes [filmes]="filmesPopulares"></app-lista-filmes>
+    <app-lista-filmes [filmes]="filmesPopulares" (goToMovie)="irParaDetalhesFilme($event)"></app-lista-filmes>
   </section>
 </div>

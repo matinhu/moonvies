@@ -1,0 +1,322 @@
+.infos {
+  background-image: linear-gradient(
+    to right,
+    rgba(10.2%, 2.75%, 7.45%, 1) 20%,
+    rgba(10.2%, 2.75%, 7.45%, 0) 50%
+  );
+}
+
+.poster {
+  box-shadow: none;
+  width: 100%;
+  min-width: 100%;
+  min-height: 0;
+  color: #fff;
+  min-width: 100vw;
+  width: 100vw;
+  height: calc(100vw / 2);
+}
+
+.imageInfo {
+  background-position: calc((((100vw / 2.222222) - 20px) / 1.5) / 2) 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-width: 100%;
+  height: 100%;
+}
+
+.imgMini {
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  width: calc(((100vw / 2.222222) - 40px) / 1.5);
+  min-width: calc(((100vw / 2.222222) - 40px) / 1.5);
+  height: calc((100vw / 2.222222) - 40px);
+  min-height: calc((100vw / 2.222222) - 40px);
+  border-radius: 6px;
+  z-index: 4;
+}
+.movieInfo {
+  height: auto;
+}
+
+.elenco {
+  color: black;
+}
+
+.h2 {
+  font-weight: 700;
+}
+
+.details {
+  position: absolute;
+  top: 50px;
+}
+
+.item {
+  padding-left: 20px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.item:before {
+  font-size: 1.1em;
+  line-height: 1;
+  content: "\2022";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 7px;
+  display: inline-flex;
+  align-content: center;
+  align-items: center;
+}
+
+.avaliacao {
+  width: 50px;
+  top: 15px;
+  position: relative;
+  font-weight: bolder;
+}
+
+.roundBtn {
+  display: flex;
+  justify-content: center;
+  width: 60px;
+  top: 15px;
+  position: relative;
+  left: 15px;
+}
+
+.mat-fab {
+  height: 45px !important;
+  width: 45px !important;
+}
+
+.tagline {
+  font-style: italic;
+}
+
+.overview {
+  position: relative;
+  width: 45vh;
+}
+
+:host ::ng-deep .mat-icon {
+  font-size: 16px !important;
+}
+
+@media only screen and (min-width: 1300px) {
+  
+  h2 {
+    font: 500 40px / 40px Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: normal;
+    margin: 5px 0 20px;
+  }
+  .poster {
+    height: calc(100vw / 3) !important;
+  }
+  .imageInfo {
+    background-position: right 0 top !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+  }
+  .gradBg {
+    background-image: linear-gradient(
+      to right,
+      rgba(10.2%, 2.75%, 7.45%, 1) 150px,
+      rgba(10.2%, 2.75%, 7.45%, 0.84) 100%
+    );
+    height: inherit !important;
+  }
+  .imgMini {
+    position: absolute !important;
+    top: 60px !important;
+    left: 20px !important;
+    width: calc(((100vw / 4.444444) - 40px) / 1.5) !important;
+    min-width: calc(((100vw / 4.444444) - 40px) / 1.5) !important;
+    height: calc((100vw / 4.444444) - 40px) !important;
+    min-height: calc((100vw / 4.444444) - 40px) !important;
+    border-radius: 6px !important;
+    z-index: 4 !important;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .imageInfo {
+    background-position: right 0 top !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+  }
+  .gradBg {
+    background-image: linear-gradient(
+      to right,
+      rgba(10.2%, 2.75%, 7.45%, 1) 150px,
+      rgba(10.2%, 2.75%, 7.45%, 0.84) 100%
+    );
+    height: -webkit-fill-available;
+  }
+  .details {
+    right: 11vh;
+    top: 10vh !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .gradBg {
+    display: none;
+  }
+  .infos {
+    height: calc(100vw / 1.1);
+    background: #1a0713;
+  }
+  .details {
+    left: 5vh !important;
+    top: 51vh !important;
+    width: 100%;
+  }
+  h2 {
+    font: 500 30px / 32px Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: normal;
+    margin: 5px 70px 20px;
+  }
+  .desc {
+    justify-content: center;
+  }
+  .overview {
+    width: 90% !important;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .gradBg {
+    display: none;
+  }
+  .infos {
+    height: calc(100vw / 0.89);
+    background: #1a0713;
+  }
+  .details {
+    left: 5vh !important;
+    top: 50vh !important;
+    width: 100%;
+  }
+  h2 {
+    font: 500 25px / 25px Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: normal;
+    margin: 5px 30px 20px;
+  }
+  .desc {
+    justify-content: center;
+    margin-right: 80px;
+  }
+  .overview {
+    width: 90% !important;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .gradBg {
+    display: none;
+  }
+  .infos {
+    height: calc(100vw / 0.85);
+    background: #1a0713;
+  }
+  .details {
+    left: 5vh !important;
+    top: 40vh !important;
+    width: 100%;
+  }
+  h2 {
+    font: 500 22px / 22px Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: normal;
+    margin: 5px 10px 20px;
+  }
+  .desc {
+    justify-content: center;
+    margin-right: 80px;
+  }
+  .overview {
+    width: 90% !important;
+  }
+}
+
+@media only screen and (max-width: 490px) {
+  .gradBg {
+    display: none;
+  }
+  .infos {
+    height: calc(100vw / 0.8);
+    background: #1a0713;
+  }
+  .details {
+    left: 4vh !important;
+    top: 36vh !important;
+    width: 100%;
+  }
+  h2 {
+    font: 500 20px/20px Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: normal;
+    margin: 5px 10px 20px;
+  }
+  .desc {
+    justify-content: center;
+    margin-right: 100px;
+  }
+  .overview {
+    width: 90% !important;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .gradBg {
+    display: none;
+  }
+  .infos {
+    height: calc(100vw / 0.6);
+    background: #1a0713;
+  }
+  .details {
+    left: 3vh !important;
+    top: 32vh !important;
+    width: 100%;
+  }
+  h2 {
+    font: 500 16px/16px Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: normal;
+    margin: 5px 5px 20px;
+  }
+  .desc {
+    justify-content: center !important;
+    margin-right: 70px !important;
+    font-size: 11px !important;
+  }
+  .overview {
+    width: 85% !important;
+  }
+  .roundBtn {
+    width: 50px !important;
+  }
+}
+
+.respToolbar {
+  background-color: white;
+  color: black;
+  height: 100%;
+  font-size: 1em;
+  white-space: nowrap;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  padding-left: 20px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.fCenter {
+  flex: auto;
+  align-items: center !important;
+  text-align: center !important;
+}

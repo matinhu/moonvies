@@ -6,8 +6,8 @@
   min-width: 200px;
   background-image: url(/assets/imgs/logo.png);
   background-size: 100% auto;
-  min-height: 120px;
-  max-height: 120px;
+  min-height: 7vh;
+  max-height: 7vh;
   background-position: center;
   background-size: 120px;
   background-repeat: no-repeat;
@@ -75,5 +75,3 @@ button {
 .mat-sidenav-backdrop.mat-sidenav-shown {
   background-color: transparent !important;
 }
-
-

@@ -72,6 +72,17 @@ body {
   background: rgb(195, 195, 195);
 }
 
-.oh{
+.oh {
   overflow: hidden !important;
+}
+
+.justify-space-around {
+  justify-content: space-around;
+}
+
+.center {
+  justify-content: center !important;
+  justify-self: center !important;
+  align-items: center !important;
+  text-align: center !important;
 }

@@ -20,7 +20,7 @@ $flg: 30px !important;
 $demiRed: #f52357;
 $demiYellow: #faf38e;
 $demiOrange: #fa8e8e;
-$demiWhite:  #fff4f4;
+$demiWhite: #fff4f4;
 $darkWine: #911131;
 $darkinWine: #921d3a;
 $demiPink: #f3497c;
@@ -32,4 +32,12 @@ $demiDarkin: #1d1c1c;
 $moonMain: #032541;
 $moonDuo: #153963;
 $moonTri: #539ddf;
+
+// Widths
+$width: 1300px;
+@media only screen and (min-width: 1400px) {
+  html {
+    $width: 1300px;
+  }
+}
 /*--------------------*/
