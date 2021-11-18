@@ -16,7 +16,6 @@ export class ItemFilmeComponent implements OnInit, OnChanges {
       console.log(this.filme.vote_average)
       let votos: string = this.filme.vote_average.toString();
       votos = votos.replace('.', '');
-      console.log(votos)
     }
   }
 }
