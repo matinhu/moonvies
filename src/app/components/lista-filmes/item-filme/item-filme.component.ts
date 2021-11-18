@@ -12,5 +12,11 @@ export class ItemFilmeComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {}
   ngOnChanges() {
+    if (this.filme.vote_average) {
+      console.log(this.filme.vote_average)
+      let votos: string = this.filme.vote_average.toString();
+      votos = votos.replace('.', '');
+      console.log(votos)
+    }
   }
 }
