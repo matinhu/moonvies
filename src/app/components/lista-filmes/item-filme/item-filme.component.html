@@ -4,20 +4,33 @@
     [src]="imgPath + filme?.poster_path"
     [matTooltip]="filme?.title"
   />
-  <mat-card-content class="movieInfo">
+  <div class="movieInfo">
     <div class="vgroup">
-      <span class="rating">
-        <mat-progress-spinner
-          class="example-margin"
-          mode="determinate"
-          [value]="filme?.vote_average"
-        >
-        </mat-progress-spinner>
-      </span>
-      <span class="movieName">{{ filme?.original_title }}</span>
+      <span class="movieName">{{ filme?.title }}</span>
       <span class="movieDate">{{
         filme?.release_date | date: "dd/MM/yyyy"
       }}</span>
     </div>
-  </mat-card-content>
+  </div>
 </mat-card>
+<div class="rating">
+  <div class="fundo">
+    <label>{{ filme?.vote_average }}<small>%</small></label>
+  </div>
+  <mat-spinner
+    class="track"
+    mode="determinate"
+    value="100"
+    [diameter]="40"
+    #customSpinnerBackground
+  ></mat-spinner>
+  <mat-spinner
+    mode="determinate"
+    [value]="filme?.vote_average"
+    [diameter]="40"
+    [strokeWidth]="4"
+    [id]="'spin' + filme.id"
+    #customSpinner
+  >
+  </mat-spinner>
+</div>
