@@ -1,16 +1,21 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   EventEmitter,
   Input,
   OnChanges,
   OnInit,
   Output,
+  ViewEncapsulation,
 } from '@angular/core';
+
 
 @Component({
   selector: 'app-lista-filmes',
   templateUrl: './lista-filmes.component.html',
   styleUrls: ['./lista-filmes.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ListaFilmesComponent implements OnInit, OnChanges {
   @Input() filmes: any = [];

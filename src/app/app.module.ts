@@ -9,6 +9,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatMenuModule } from '@angular/material/menu';
 import { HomeComponent } from './pages/home/home.component';
 import { CustomComboComponent } from './components/custom-combo/custom-combo.component';
+import { GlobalService } from 'src/app/services/global.service';
+import { HttpService } from 'src/app/services/http.service';
+import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
@@ -19,8 +22,11 @@ import { CustomComboComponent } from './components/custom-combo/custom-combo.com
     SharedModule,
     FlexLayoutModule,
     MatMenuModule,
+    HttpClientModule,
+    HttpClientJsonpModule
   ],
-  providers: [],
+  providers: [HttpService, GlobalService],
   bootstrap: [AppComponent],
+  
 })
 export class AppModule {}

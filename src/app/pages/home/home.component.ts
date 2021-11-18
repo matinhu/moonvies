@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from 'src/app/services/http.service';
+import { TheMovieDbService } from 'src/app/services/the-movie-db.service';
 
 @Component({
   selector: 'app-home',
@@ -26,16 +28,22 @@ export class HomeComponent implements OnInit {
       nome: 'Nos Cinemas',
     },
   ];
+  public filmesPopulares: any [] = [];
   public popularSelecionado: any = {};
-  constructor() {}
+  constructor(private movieService: TheMovieDbService) {}
 
-  ngOnInit(): void {
+  async ngOnInit() {
     const idx = this.populares.findIndex((item: any) => item.id == 0);
     this.popularSelecionado = this.populares[idx];
+    await this.carregarPopulares();
   }
 
   clickBuscar() {}
-  carregarPopulares() {
-
+  async carregarPopulares() {
+    const req: any = await this.movieService.getPopulares();
+    if (req && req.results) {
+      console.log(req.results);
+      this.filmesPopulares = req.results;
+    }
   }
 }
