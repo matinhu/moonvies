@@ -1,0 +1,10 @@
+<!-- <cdk-virtual-scroll-viewport #virtualScroll itemSize="50" class="vgroup f1">  -->
+<div class="hgroup f1">
+  <app-item-filme
+    [id]="'R' + filme.id"
+    *ngFor="let filme of filmes"
+    [filme]="filme"
+    (click)="clickSelecao(filme)"
+  >
+  </app-item-filme>
+</div>

@@ -1,0 +1,57 @@
+@import "assets/scss/variables";
+@import "assets/scss/margin-padding";
+@import "assets/scss/width-height";
+@import "assets/scss/colors";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.formFieldSemEspaco .mat-form-field-wrapper {
+  padding: 0;
+}
+
+.xsmall {
+  font-size: $fxs;
+}
+
+.small {
+  font-size: $fsm;
+}
+
+.medium {
+  font-size: $fmd;
+}
+
+.big {
+  font-size: $flg;
+}
+
+.f1 {
+  flex: 1 !important;
+}
+
+.right {
+  position: absolute !important;
+  right: 0 !important;
+}
+
+.vgroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.hgroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.baseline {
+  align-self: baseline !important;
+}

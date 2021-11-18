@@ -1,0 +1,13 @@
+<div class="hgroup" style="position: relative;" >
+    <mat-form-field [appearance]="padrao ? 'outline' : 'legacy'" class="w100" [ngClass]="{formFieldSemEspaco: padrao, f1: padrao}" >
+      <input matInput [required]="required_color" #edInput (keydown.Tab)="onFocusOutInput($event)"
+      [ngStyle]="{'max-height': maxHeight ? maxHeight : 'auto', 'background-color': invalido ? '#FFA2A2' : readonly ? '#f0f0f0' : '#fff', 'text-align': textAlign ? textAlign : 'left'}"
+      type="text" class="f1"
+      [(ngModel)]="objectSource[editField]" (ngModelChange)="changeText($event)" (keyup.enter)="onKeyDown($event)"
+      [readonly]="readonly" [placeholder]="placeHolder" [disabled]="disabled || showCloseButton"
+      [ngClass]="{'button-close-background': showCloseButton}"
+      [attr.maxlength]="maxLength">
+      <mat-icon matSuffix (click)="readonly ? null : clickSearch()" id="search" tabindex="-1" style="cursor: pointer;">search</mat-icon>
+    </mat-form-field>
+  </div>
+  

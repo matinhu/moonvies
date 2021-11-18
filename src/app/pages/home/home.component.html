@@ -1,0 +1,46 @@
+<div class="container" style="color: black">
+  <section class="bemVindo">
+    <div class="title">
+      <h2>Bem-Vindo(a).</h2>
+      <h3>Milhões de Filmes, Séries e Pessoas para Descobrir. Explore já.</h3>
+    </div>
+    <mat-form-field class="w90 ml20" appearance="fill">
+      <mat-label>Buscar....</mat-label>
+      <input matInput type="text" [(ngModel)]="search" />
+      <button
+        *ngIf="search"
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="clickBuscar()"
+        matTooltipPosition="after"
+        matTooltip="Buscar"
+      >
+        <mat-icon>search</mat-icon>
+      </button>
+    </mat-form-field>
+  </section>
+  <section class="populares">
+    <div class="hgroup black">
+      <!-- <strong class="medium mr20 baseline">Os Mais Populares</strong> -->
+      <app-custom-combo
+        [style]="'width: 283px; margin-bottom: 10px'"
+        label="Os Mais Populares"
+        [dataProvider]="populares"
+        labelField="nome"
+        keyField="id"
+        [objectSource]="popularSelecionado"
+        editField="id"
+        #cbPopulares
+        (changeValue)="carregarPopulares()"
+      >
+      </app-custom-combo>
+    </div>
+
+    <div>
+      <app-lista-filmes
+        [filmes]="[{id: 1, nome: 'teste'},{id: 1, nome: 'teste'}]"
+      ></app-lista-filmes>
+    </div>
+  </section>
+</div>

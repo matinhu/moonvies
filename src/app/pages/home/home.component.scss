@@ -1,0 +1,102 @@
+.bemVindo {
+  background-image: linear-gradient(
+      to right,
+      rgb(17 60 95 / 80%) 0%,
+      rgb(53 142 159 / 47%) 100%
+    ),
+    url("/assets/imgs/moonSection.png");
+
+  background-size: 100% auto;
+  min-height: 300px;
+  height: calc(100vh / 2.5);
+  max-height: 360px;
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  max-width: var(--maxPrimaryPageWidth);
+}
+
+@media only screen and (min-width: 1400px) {
+  html {
+    --maxPrimaryPageWidth: 1300px;
+  }
+}
+
+.title {
+  padding: 5vh;
+  color: white;
+}
+.title h2 {
+  font-size: 3em;
+  font-weight: 700;
+  line-height: 1;
+}
+.title h3 {
+  font-size: 2em;
+  font-weight: 600;
+  margin: 0;
+}
+
+.populares {
+  padding: 5vh;
+  color: black !important;
+}
+
+.inputSearch {
+  padding: 1px;
+}
+
+:host ::ng-deep .mat-drawer-inner-container {
+  align-items: baseline;
+}
+
+/*custom combo*/
+//input outline color
+:host
+  ::ng-deep
+  .custom.mat-form-field-appearance-outline
+  .mat-form-field-outline {
+  color: #032541 !important;
+  // opacity: 1!important;
+}
+
+//mat-input focused color
+:host
+  ::ng-deep
+  .custom.mat-form-field-appearance-outline.mat-focused
+  .mat-form-field-outline-thick {
+  color: #032541 !important;
+}
+
+// mat-input error outline color
+:host
+  ::ng-deep
+  .custom.mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid
+  .mat-form-field-outline-thick {
+  color: #032541 !important;
+  opacity: 0.8 !important;
+}
+
+// mat-label focused style
+:host ::ng-deep .custom.mat-form-field.mat-focused .mat-form-field-label {
+  color: #032541 !important;
+}
+
+// mat-label error style
+:host
+  ::ng-deep
+  .custom.mat-form-field.mat-form-field-invalid
+  .mat-form-field-label {
+  color: #032541 !important;
+}
+
+
+:host ::ng-deep .mat-form-field-type-mat-select .mat-form-field-label,
+.mat-select-value {
+  color: #032541 !important;
+}
+
+.mat-form-field-label {
+    color: #032541 !important;
+}

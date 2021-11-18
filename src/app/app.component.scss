@@ -1,0 +1,73 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.logo {
+  min-width: 200px;
+  background-image: url(/assets/imgs/logo.png);
+  background-size: 100% auto;
+  min-height: 120px;
+  max-height: 120px;
+  background-position: center;
+  background-size: 120px;
+  background-repeat: no-repeat;
+}
+
+.mat-toolbar {
+  height: 7vh;
+}
+
+div {
+  overflow: inherit;
+}
+
+.mat-sidenav-container {
+  background-color: rgb(255, 255, 255);
+  min-height: 93vh !important;
+}
+
+a {
+  text-decoration: none;
+  font-size: 110%;
+  white-space: normal;
+}
+
+button {
+  font-size: 110%;
+  min-width: min-content;
+}
+
+.example-icon {
+  padding: 0 14px;
+}
+
+.mat-sidenav-content {
+  //  font-size: 200%;
+  justify-content: center;
+  height: 100%;
+}
+
+.a {
+  color: rgb(3, 37, 65);
+}
+
+.blugBr {
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.sticky {
+  position: sticky;
+  position: -webkit-sticky; /* For macOS/iOS Safari */
+  top: 0; /* Sets the sticky toolbar to be on top */
+  z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
+}
