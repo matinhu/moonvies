@@ -1,16 +1,15 @@
-.cdk-virtual-scroll-data-source-example .example-viewport {
-  min-height: 355px;
+.cdk-virtual-scroll-data-source .viewport {
+  min-height: 380px;
   width: 92vw;
+  box-shadow: inset -20px -10px 30px 5px white;
 }
 
-.cdk-virtual-scroll-data-source-example
-  .example-viewport
-  .cdk-virtual-scroll-content-wrapper {
+.cdk-virtual-scroll-data-source .viewport .cdk-virtual-scroll-content-wrapper {
   display: flex;
   flex-direction: row;
 }
 
-.cdk-virtual-scroll-data-source-example .example-item {
+.cdk-virtual-scroll-data-source .item {
   width: 200px;
   height: 100%;
 }

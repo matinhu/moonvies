@@ -27,12 +27,6 @@
   stroke-opacity: 1 !important;
 }
 
-.twitter-like {
-  .mat-progress-spinner {
-    display: inline;
-  }
-}
-
 .track {
   position: relative;
   bottom: -40px;
@@ -62,4 +56,20 @@
       font-weight: 300;
     }
   }
+}
+.movieInfo {
+  position: relative;
+  top: -120px;
+  padding: 15px;
+  width: 150px;
+}
+
+.movieName {
+  font-weight: bolder;
+  position: relative;
+}
+
+.movieDate {
+  position: relative;
+  width: 200px;
 }

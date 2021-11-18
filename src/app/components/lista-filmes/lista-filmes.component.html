@@ -1,12 +1,13 @@
-<div class="cdk-virtual-scroll-data-source-example">
+<div class="cdk-virtual-scroll-data-source">
   <cdk-virtual-scroll-viewport
     orientation="horizontal"
     itemSize="200"
-    class="example-viewport"
-    style="overflow-y: hidden !important;"
+    class="viewport"
+    style="overflow-y: hidden !important"
   >
-    <div *cdkVirtualFor="let filme of filmes" class="example-item" >
+    <div *cdkVirtualFor="let filme of filmes" class="item oh">
       <app-item-filme
+        
         [id]="'R' + filme.id"
         [filme]="filme"
         (click)="clickSelecao(filme)"
