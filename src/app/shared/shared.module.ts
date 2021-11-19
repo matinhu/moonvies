@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -16,6 +16,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 //Components
 import { SearchComponent } from 'src/app/components/search/search.component';
@@ -28,6 +29,7 @@ import { AutoOpenMenuComponent } from 'src/app/components/auto-open-menu/auto-op
 import { RatingComponent } from 'src/app/components/rating/rating.component';
 import { DetalhesComponent } from '../pages/movie/detalhes/detalhes.component';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -39,10 +41,11 @@ import { MatMenuModule } from '@angular/material/menu';
     DialogQuestionComponent,
     RatingComponent,
     DetalhesComponent,
-    AutoOpenMenuComponent
+    AutoOpenMenuComponent,
   ],
   imports: [
     FormsModule,
+    ReactiveFormsModule,
     CommonModule,
     MatButtonModule,
     MatToolbarModule,
@@ -60,10 +63,12 @@ import { MatMenuModule } from '@angular/material/menu';
     MatProgressBarModule,
     MatGridListModule,
     MatMenuModule,
-    
+    MatExpansionModule,
+    MatAutocompleteModule,
   ],
   exports: [
     FormsModule,
+    ReactiveFormsModule,
     SearchComponent,
     CustomComboComponent,
     ListaFilmesComponent,
@@ -87,8 +92,10 @@ import { MatMenuModule } from '@angular/material/menu';
     MatProgressBarModule,
     MatGridListModule,
     MatMenuModule,
+    MatExpansionModule,
+    MatAutocompleteModule,
     RatingComponent,
-    AutoOpenMenuComponent
+    AutoOpenMenuComponent,
   ],
 })
 export class SharedModule {}

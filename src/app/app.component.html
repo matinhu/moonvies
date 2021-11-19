@@ -112,16 +112,16 @@
     <div fxLayout="column w100 baseline" style="padding: 10px;">
         <button mat-button [matMenuTriggerFor]="filmes"><span class="big">Filmes</span></button>
         <mat-menu #filmes="matMenu">
-          <button mat-menu-item (click)="goTo('movies/populares')">
+          <button mat-menu-item (click)="goTo('movie')">
             <mat-icon class="mr black">rocket_launch</mat-icon>Populares
           </button>
-          <button mat-menu-item>
+          <button mat-menu-item (click)="goTo('movie/now-playing')">
             <mat-icon class="mr black">star_rate</mat-icon>Em cartaz
           </button>
-          <button mat-menu-item>
+          <button mat-menu-item (click)="goTo('movie/upcoming')">
             <mat-icon class="mr black">campaign</mat-icon>Próximas Estreias
           </button>
-          <button mat-menu-item>
+          <button mat-menu-item (click)="goTo('movie/top-rated')">
             <mat-icon class="mr black">thumb_up</mat-icon>Mais bem avaliados
           </button>
         </mat-menu>

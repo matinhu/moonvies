@@ -32,7 +32,6 @@ export class ListaPessoasComponent implements OnInit, OnChanges {
   }
   ngOnChanges() {
     if (this.pessoas) {
-      console.log(this.pessoas);
     }
   }
 

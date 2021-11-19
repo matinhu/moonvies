@@ -1,15 +1,57 @@
 <app-detalhes class="vgroup" [filme]="filme" *ngIf="detalhes"></app-detalhes>
+<h2 class="black tipoFilme" *ngIf="!detalhes">{{tipoFilme}}</h2>
+<div class="container vroup h100 black" *ngIf="!detalhes">
+  <div class="hgroup" style="padding-top: 50px;">
+    <div class="f1 black" style="display: flex; flex-direction: row; justify-content: center; align-self: baseline;">
+      <mat-accordion
+        class="example-headers-align"
+        multi
+        style="max-width: 250px"
+      >
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-description> Ordenar </mat-panel-description>
+          </mat-expansion-panel-header>
+          <app-custom-combo
+            [style]="'width: 200px; margin-bottom: 20px'"
+            label="Ordenar Resultados Por"
+            [dataProvider]="sortBy"
+            labelField="name"
+            keyField="query"
+            [objectSource]="filtro"
+            editField="sortBy"
+            #cbFiltroSortBy
+            (changeValue)="clickFiltrar()"
+          ></app-custom-combo>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-description> Filtros </mat-panel-description>
+          </mat-expansion-panel-header>
 
-<div class="hgroup">
-  <div class="vgroup"></div>
-  <div class="f1">TESTE</div>
-  <div>
-    EIUWQHELKJAELKJk
-    <app-lista-filmes
-      *ngIf="!detalhes"
-      [filmes]="filmes"
-      [full]="true"
-      (goToMovie)="irParaDetalhesFilme($event)"
-    ></app-lista-filmes>
+          NANA NINA NÃO
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-description> Onde Assistir </mat-panel-description>
+          </mat-expansion-panel-header>
+
+          Meus Serviços
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <div class="f3">
+      <app-lista-filmes
+        *ngIf="!detalhes"
+        [filmes]="filmes"
+        [full]="true"
+        [tipo]="tipo"
+        [carregarTodos]="carregarTodos"
+        (goToMovie)="irParaDetalhesFilme($event)"
+        (clickCarregarTodos)="clickCarregarMais($event)"
+        (onFinalScroll)="clickCarregarMais($event)"
+      ></app-lista-filmes>
+    </div>
   </div>
 </div>

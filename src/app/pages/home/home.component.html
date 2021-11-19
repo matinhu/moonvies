@@ -4,9 +4,16 @@
       <h2>Bem-Vindo(a).</h2>
       <h3>Milhões de Filmes, Séries e Pessoas para Descobrir. Explore já.</h3>
     </div>
-    <mat-form-field class="w90 ml20" appearance="fill">
-      <mat-label>Buscar....</mat-label>
-      <input matInput type="text" [(ngModel)]="search" />
+
+    <mat-form-field class="ml20 w90" appearance="fill">
+      <mat-label>State</mat-label>
+      <input
+        matInput
+        aria-label="State"
+        [matAutocomplete]="auto"
+        [(ngModel)]="search"
+        (keyup)="carregarFilmes(search)"
+      />
       <button
         *ngIf="search"
         matSuffix
@@ -18,12 +25,27 @@
       >
         <mat-icon>search</mat-icon>
       </button>
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let movie of filmesBusca" [value]="movie.title">
+          <img
+            class="example-option-img"
+            aria-hidden
+            [src]="movie.image"
+            height="50"
+          />
+
+          <span class="mr10 movieTitle">{{movie.title}}</span>
+          <small class="synopsis">{{ movie.synopsis }}</small>
+        </mat-option>
+      </mat-autocomplete>
     </mat-form-field>
+
+    <br />
   </section>
   <section class="populares">
     <div class="hgroup black">
       <!-- <strong class="medium mr20 baseline">Os Mais Populares</strong> -->
-    <app-custom-combo
+      <app-custom-combo
         [style]="'width: 283px; margin-bottom: 10px'"
         label="Os Mais Populares"
         [dataProvider]="populares"
@@ -37,6 +59,9 @@
       </app-custom-combo>
     </div>
 
-    <app-lista-filmes [filmes]="filmesPopulares" (goToMovie)="irParaDetalhesFilme($event)"></app-lista-filmes>
+    <app-lista-filmes
+      [filmes]="filmesPopulares"
+      (goToMovie)="irParaDetalhesFilme($event)"
+    ></app-lista-filmes>
   </section>
 </div>
