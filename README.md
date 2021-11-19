@@ -1,4 +1,4 @@
-![MoonvieS](logoF.png)
+![Moonvies - A The Movie DB study Project!](logoF.png)
 
 # MOONVIES - Banco de Filmes usando a The Movie DB!!
 
