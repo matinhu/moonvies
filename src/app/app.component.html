@@ -12,7 +12,7 @@
     <div class="logo" routerLink="/"></div>
     <div fxShow="true" fxHide.lt-md="true">
       <app-auto-open-menu>
-        <div trigger >Filmes</div>
+        <div trigger>Filmes</div>
         <div content>
           <span mat-menu-item (click)="goTo('movie')"
             ><mat-icon class="mr black">rocket_launch</mat-icon>Populares</span
@@ -92,8 +92,12 @@
           Configurações
         </button>
         <mat-divider></mat-divider>
-        <button mat-menu-item matTooltip="Sair" matTooltipPosition="left">
-          <mat-icon class="mr black">logout</mat-icon> Sair
+        <button mat-menu-item matTooltip="hehe" matTooltipPosition="left">
+          <a
+            href="mailto:matheulls@hotmail.com?Subject=Sobre seu APP lindo.&body=Amei Parabéns Bem Vindo!"
+            target="_top"
+            ><mat-icon class="mr black">logout</mat-icon> ME CHAMA!</a
+          >
         </button>
       </mat-menu>
     </div>
@@ -109,8 +113,10 @@
       opened="false"
       fxHide.gt-sm="true"
     >
-    <div fxLayout="column w100 baseline" style="padding: 10px;">
-        <button mat-button [matMenuTriggerFor]="filmes"><span class="big">Filmes</span></button>
+      <div fxLayout="column w100 baseline" style="padding: 10px">
+        <button mat-button [matMenuTriggerFor]="filmes">
+          <span class="big">Filmes</span>
+        </button>
         <mat-menu #filmes="matMenu">
           <button mat-menu-item (click)="goTo('movie')">
             <mat-icon class="mr black">rocket_launch</mat-icon>Populares

@@ -18,9 +18,17 @@ import { MovieComponent } from './pages/movie/movie.component';
 import { AutoOpenMenuComponent } from './components/auto-open-menu/auto-open-menu.component';
 import { ListaPessoasComponent } from './components/lista-pessoas/lista-pessoas.component';
 import { ItemPessoaComponent } from './components/lista-pessoas/item-pessoa/item-pessoa.component';
+import { MovieSearchComponent } from './pages/movie-search/movie-search.component';
 registerLocaleData(ptBr);
 @NgModule({
-  declarations: [AppComponent, HomeComponent, MovieComponent, ListaPessoasComponent, ItemPessoaComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    MovieComponent,
+    ListaPessoasComponent,
+    ItemPessoaComponent,
+    MovieSearchComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

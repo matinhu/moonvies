@@ -1,0 +1,15 @@
+.respToolBar {
+  min-width: 6vh;
+  background: #ffffff;
+  border-bottom: solid 1px #ebebeb;
+  background-color: white;
+  color: black;
+  height: 100%;
+  font-size: 1em;
+  white-space: nowrap;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  padding-left: 20px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}

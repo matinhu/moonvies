@@ -6,13 +6,14 @@
     </div>
 
     <mat-form-field class="ml20 w90" appearance="fill">
-      <mat-label>State</mat-label>
+      <mat-label>Buscar</mat-label>
       <input
         matInput
-        aria-label="State"
+        aria-label="Buscar "
         [matAutocomplete]="auto"
         [(ngModel)]="search"
         (keyup)="carregarFilmes(search)"
+        (keyup.enter)="clickBuscar()"
       />
       <button
         *ngIf="search"

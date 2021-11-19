@@ -42,6 +42,7 @@ export class MovieComponent implements OnInit {
           this.detalhes = true;
           this.carregarDetalhes(param.id);
         } else {
+          this.detalhes = false
           const url = this.router.url;
           let tipo = url.toString().replace('/movie/', '').replace('-','_');
           this.tipo = tipo;
@@ -76,18 +77,6 @@ export class MovieComponent implements OnInit {
     await this.carregarFilmes(this.tipo, this.carregarTodos, this.filtro.sortBy, true);
 
     
-  }
-  async buscarFilmes() {
-    const req: any = await this.movieService.search('', this.filtro.sortBy);
-    if (req && req.results) {
-      console.log(req.results);
-      if (this.carregarTodos) {
-        this.filmes = [...this.filmes, ...req.results];
-        console.log(this.filmes)
-      } else {
-        this.filmes = req.results;
-      }
-    }
   }
   async carregarFilmes(tipo: any, carregarMais: boolean = false, filtro?: string, reset?: boolean) {
     const req: any = await this.movieService.getByTipo(tipo, filtro, reset);

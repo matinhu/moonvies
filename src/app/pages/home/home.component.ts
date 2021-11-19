@@ -82,7 +82,7 @@ export class HomeComponent implements OnInit {
   }
 
   clickBuscar() {
-    this.carregarFilmes(this.search);
+      this.router.navigate(['search/', this.search]);
   }
   async carregarPopulares() {
     const req: any = await this.movieService.getPopulares(

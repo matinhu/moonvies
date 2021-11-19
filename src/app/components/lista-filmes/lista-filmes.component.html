@@ -1,4 +1,4 @@
-<div class="cdk-virtual-scroll-data-source" *ngIf="!full">
+<div class="cdk-virtual-scroll-data-source" *ngIf="!full && !busca">
   <cdk-virtual-scroll-viewport
     orientation="horizontal"
     itemSize="200"
@@ -17,8 +17,12 @@
   </cdk-virtual-scroll-viewport>
 </div>
 
-<div class="cdk-virtual-scroll-data-source full" *ngIf="full">
-  <cdk-virtual-scroll-viewport class="full viewport" [itemSize]="200" (scrolledIndexChange)="nextBatch($event)">
+<div class="cdk-virtual-scroll-data-source full" *ngIf="full && !busca">
+  <cdk-virtual-scroll-viewport
+    class="full viewport"
+    [itemSize]="200"
+    (scrolledIndexChange)="nextBatch($event)"
+  >
     <div class="row no-gutters full item oh" *cdkVirtualFor="let row of todos">
       <div class="col-3" *ngFor="let filme of row">
         <app-item-filme
@@ -30,9 +34,35 @@
         </app-item-filme>
       </div>
     </div>
-    <button mat-raised-button class="w90" color="primary"  *ngIf="!carregarTodos" (click)="clickCarregarMais()">
+    <button
+      mat-raised-button
+      class="w90"
+      color="primary"
+      *ngIf="!carregarTodos"
+      (click)="clickCarregarMais()"
+    >
       Carregar Mais
     </button>
   </cdk-virtual-scroll-viewport>
-  
+</div>
+
+<div class="vgroup" *ngIf="busca">
+  <div class="vgroup" *ngFor="let filme of filmes">
+    <app-item-filme
+      [horizontal]="true"
+      [full]="full"
+      [id]="'R' + filme.id"
+      [filme]="filme"
+      (click)="clickSelecao(filme)"
+    >
+    </app-item-filme>
+  </div>
+  <mat-paginator
+    (page)="(paginador?.current)"
+    class="mr40"
+    [length]="paginador?.results"
+    [pageSize]="paginador?.total"
+    aria-label="Select page"
+  >
+  </mat-paginator>
 </div>

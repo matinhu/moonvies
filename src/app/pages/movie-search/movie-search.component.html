@@ -1,0 +1,37 @@
+<div class="container vroup h100 black">
+  <mat-toolbar class="respToolBar">
+    <mat-form-field class="w100" appearance="fill">
+      <mat-label>Buscar</mat-label>
+      <input
+        matInput
+        aria-label="Buscar"
+        [(ngModel)]="search"
+        (ngModelChange)="buscarFilmes(search)"
+        (keyup.enter)="buscarFilmes(search)"
+      />
+      <button
+        *ngIf="search"
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="buscarFilmes(search)"
+        matTooltipPosition="after"
+        matTooltip="Buscar"
+      >
+        <mat-icon>search</mat-icon>
+      </button>
+    </mat-form-field>
+  </mat-toolbar>
+  <div class="hgroup" style="padding-top: 50px">
+    <div class="f3 ml30">
+      <app-lista-filmes
+        [filmes]="filmes"
+        [busca]="true"
+        [paginador]="paginador"
+        [carregarTodos]="carregarTodos"
+        (goToMovie)="irParaDetalhesFilme($event)"
+        (nextPage)="buscarFilmes(search, $event)"
+      ></app-lista-filmes>
+    </div>
+  </div>
+</div>

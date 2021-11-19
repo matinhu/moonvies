@@ -17,6 +17,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatListModule } from '@angular/material/list';
 
 //Components
 import { SearchComponent } from 'src/app/components/search/search.component';
@@ -30,6 +31,7 @@ import { RatingComponent } from 'src/app/components/rating/rating.component';
 import { DetalhesComponent } from '../pages/movie/detalhes/detalhes.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -65,6 +67,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatMenuModule,
     MatExpansionModule,
     MatAutocompleteModule,
+    MatListModule,
+    MatPaginatorModule,
   ],
   exports: [
     FormsModule,
@@ -94,6 +98,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatMenuModule,
     MatExpansionModule,
     MatAutocompleteModule,
+    MatListModule,
+    MatPaginatorModule,
     RatingComponent,
     AutoOpenMenuComponent,
   ],

@@ -1,5 +1,48 @@
-<div >
+<div *ngIf="!horizontal">
   <mat-card class="mr ml movieCard" [ngClass]="{ full: full }">
+    <img
+      mat-card-image
+      [src]="imgPath + filme?.poster_path"
+      onerror="src='assets/imgs/default-image.png'"
+      [matTooltip]="filme?.title"
+    />
+  </mat-card>
+  <app-rating [full]="full" [filme]="filme" [type]="'default'"></app-rating>
+  <div class="vgroup movieInfo" [ngClass]="{ detalhe: full }">
+    <span class="movieName">{{ filme?.title }}</span>
+    <span class="movieDate">{{ filme?.release_date | date: "longDate" }}</span>
+  </div>
+</div>
+
+<div
+  *ngIf="horizontal"
+  style="
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-content: flex-start;
+  "
+>
+  <mat-card class="cardHorizontal" style="margin-bottom: 10px">
+    <mat-card-content class="cardHorizontal-content">
+      <img
+        class="horCardImg"
+        mat-card-image
+        [src]="imgPath + filme?.poster_path"
+        onerror="src='assets/imgs/default-image.png'"
+        [matTooltip]="filme?.title"
+      />
+
+      <div>
+        <span class="movieName">{{ filme?.title }}</span>
+        <span class="movieDate">{{
+          filme?.release_date | date: "longDate"
+        }}</span>
+        <span class="movieOverview">{{ filme?.overview }}</span>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- <mat-card class="mr ml movieCard" [ngClass]="{ full: full }">
     <img
       mat-card-image
       [src]="imgPath + filme?.poster_path"
@@ -7,8 +50,8 @@
     />
   </mat-card>
   <app-rating [full]="full" [filme]="filme" [type]="'default'"></app-rating>
-  <div class="vgroup movieInfo" [ngClass]="{detalhe: full}">
+  <div class="vgroup movieInfo" [ngClass]="{ detalhe: full }">
     <span class="movieName">{{ filme?.title }}</span>
     <span class="movieDate">{{ filme?.release_date | date: "longDate" }}</span>
-  </div>
+  </div> -->
 </div>

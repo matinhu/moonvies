@@ -10,6 +10,7 @@ export class ItemFilmeComponent implements OnInit, OnChanges {
   public imgPath: string = 'https://image.tmdb.org/t/p/w500';
   @Input() filme: any = {};
   @Input() full: boolean = false;
+  @Input() horizontal: boolean = false;
   @ViewChild('customSpinner', { static: false }) customSpinner!: MatSpinner;
   @ViewChild('customSpinnerBackground', { static: false }) customSpinnerBackground!: MatSpinner;
   constructor() {}

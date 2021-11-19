@@ -91,3 +91,67 @@
   position: relative;
   overflow: hidden;
 }
+
+.cardHorizontal {
+  cursor: pointer;
+  transition: 0.4s ease-out;
+  border-radius: 4px;
+  display: flex;
+  max-width: calc(100vw - 82px);
+  margin-top: 100px;
+  padding: 0;
+  margin-top: 20px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+  border: 1px solid rgba(var(--lightGrey), 1);
+  background-color: #fff;
+  color: black;
+
+  .mat-card-image {
+    margin: 0;
+    min-width: 94px;
+    width: 94px;
+    height: 141px;
+  }
+
+  .cardHorizontal-content {
+    display: flex;
+    justify-content: space-between;
+
+    & > * {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      &:first-child {
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+      }
+
+      &:last-child {
+        flex-direction: column;
+        align-items: start;
+        padding: 8px;
+      }
+    }
+    .movieName {
+      font-size: 16px !important;
+      margin-bottom: 10px !important;
+    }
+    .movieDate {
+      color: #a4a4a4 !important;
+      font-weight: 400 !important;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.cardHorizontal:hover {
+  transform: translateY(-5px);
+  transition: 0.4s ease-out;
+}
+
+.cardHorizontal:hover ~ .card {
+  position: relative;
+  top: 5px;
+  transition: 0.4s ease-out;
+}

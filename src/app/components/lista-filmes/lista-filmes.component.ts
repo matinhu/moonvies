@@ -1,5 +1,6 @@
 import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
 import {
+  AfterViewInit,
   ChangeDetectionStrategy,
   Component,
   EventEmitter,
@@ -10,6 +11,8 @@ import {
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-lista-filmes',
@@ -18,15 +21,21 @@ import {
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ListaFilmesComponent implements OnInit, OnChanges {
+export class ListaFilmesComponent implements OnInit, OnChanges, AfterViewInit {
   @Input() filmes: any = [];
   @Input() full: boolean = false;
+  @Input() busca: boolean = false;
   @Input() tipo: any;
+  @Input() carregarTodos: boolean = false;
+  @Input() paginador: any;
+
   @Output() goToMovie = new EventEmitter<any>();
   @Output() clickCarregarTodos = new EventEmitter<any>();
   @Output() onFinalScroll = new EventEmitter<any>();
-  @Input() carregarTodos: boolean = false;
+  @Output() nextPage = new EventEmitter<any>();
+
   public todos: any[] = [];
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   @ViewChild(CdkVirtualScrollViewport)
   viewport!: CdkVirtualScrollViewport;
@@ -36,6 +45,13 @@ export class ListaFilmesComponent implements OnInit, OnChanges {
     await this.carregarFilmes();
   }
 
+  ngAfterViewInit() {
+    if (this.paginator) {
+      this.paginator.page
+        .pipe(tap(() => this.nextPage.emit(this.paginator.pageIndex)))
+        .subscribe();
+    }
+  }
   async carregarFilmes() {
     const genero: any = '';
     const tipo: any = '';
