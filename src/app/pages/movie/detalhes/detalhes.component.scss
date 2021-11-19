@@ -161,7 +161,7 @@
     height: -webkit-fill-available;
   }
   .details {
-    right: 11vh;
+    right: 4vh;
     top: 10vh !important;
   }
 }
@@ -176,7 +176,7 @@
   }
   .details {
     left: 5vh !important;
-    top: 90vh !important;
+    top: 55vh !important;
     width: 100%;
   }
   h2 {
@@ -202,7 +202,33 @@
   }
   .details {
     left: 5vh !important;
-    top: 85vh !important;
+    top: 55vh !important;
+    width: 100%;
+  }
+  h2 {
+    font: 500 25px / 25px Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: normal;
+    margin: 5px 30px 20px;
+  }
+  .desc {
+    justify-content: center;
+    margin-right: 80px;
+  }
+  .overview {
+    width: 90% !important;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .gradBg {
+    display: none;
+  }
+  .infos {
+    height: calc(100vw / 0.89);
+    background: #1a0713;
+  }
+  .details {
+    left: 5vh !important;
+    top: 50vh !important;
     width: 100%;
   }
   h2 {
@@ -229,7 +255,7 @@
   }
   .details {
     left: 5vh !important;
-    top: 70vh !important;
+    top: 45vh !important;
     width: 100%;
   }
   h2 {
@@ -256,7 +282,7 @@
   }
   .details {
     left: 4vh !important;
-    top: 60vh !important;
+    top: 40vh !important;
     width: 100%;
   }
   h2 {
@@ -283,7 +309,7 @@
   }
   .details {
     left: 3vh !important;
-    top: 55vh !important;
+    top: 40vh !important;
     width: 100%;
   }
   h2 {
@@ -352,3 +378,5 @@
   align-items: center !important;
   text-align: center !important;
 }
+
+
