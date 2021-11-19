@@ -126,7 +126,11 @@
       >
         <div class="gradBg"></div>
         <section id="imageInfo">
-          <img [src]="imgPath + filme?.poster_path" class="imgMini" />
+          <img
+            [src]="imgPath + filme?.poster_path"
+            class="imgMini"
+            onerror="src='assets/imgs/defaultimg.svg'"
+          />
         </section>
       </div>
     </div>
@@ -135,6 +139,4 @@
   <!-- <section id="elencoPrincipal" class="elenco p20">
     <strong class="black">Elenco principal</strong>
   </section> -->
-
-  
 </div>
