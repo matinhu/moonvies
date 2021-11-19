@@ -1,4 +1,4 @@
-<div *ngIf="!horizontal">
+<div *ngIf="!horizontal && !isMobile">
   <mat-card class="mr ml movieCard" [ngClass]="{ full: full }">
     <img
       mat-card-image
@@ -15,7 +15,7 @@
 </div>
 
 <div
-  *ngIf="horizontal"
+  *ngIf="horizontal || isMobile"
   style="
     align-items: flex-start;
     align-content: flex-start;

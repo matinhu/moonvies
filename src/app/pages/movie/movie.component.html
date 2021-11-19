@@ -2,7 +2,7 @@
 <h2 class="black tipoFilme" *ngIf="!detalhes">{{tipoFilme}}</h2>
 <div class="container vroup h100 black" *ngIf="!detalhes">
   <div class="hgroup" style="padding-top: 50px;">
-    <div class="f1 black" style="display: flex; flex-direction: row; justify-content: center; align-self: baseline;">
+    <div class="f1 black" style="display: flex; flex-direction: row; justify-content: center; align-self: baseline;" *ngIf="!isMobile">
       <mat-accordion
         class="example-headers-align"
         multi
@@ -29,7 +29,7 @@
             <mat-panel-description> Filtros </mat-panel-description>
           </mat-expansion-panel-header>
 
-          NANA NINA NÃO
+          
         </mat-expansion-panel>
 
         <mat-expansion-panel>
@@ -45,8 +45,9 @@
       <app-lista-filmes
         *ngIf="!detalhes"
         [filmes]="filmes"
-        [full]="true"
+        [full]="!isMobile"
         [tipo]="tipo"
+        [mobile]="isMobile"
         [carregarTodos]="carregarTodos"
         (goToMovie)="irParaDetalhesFilme($event)"
         (clickCarregarTodos)="clickCarregarMais($event)"

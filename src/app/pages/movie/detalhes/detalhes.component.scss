@@ -303,6 +303,36 @@
     width: 50px !important;
   }
 }
+@media only screen and (max-width: 375px) {
+  .gradBg {
+    display: none;
+  }
+  .infos {
+    height: calc(100vw / 0.6);
+    background: #1a0713;
+  }
+  .details {
+    left: 3vh !important;
+    top: 36vh !important;
+    width: 100%;
+  }
+  h2 {
+    font: 500 16px/16px Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: normal;
+    margin: 5px 5px 20px;
+  }
+  .desc {
+    justify-content: center !important;
+    margin-right: 70px !important;
+    font-size: 11px !important;
+  }
+  .overview {
+    width: 85% !important;
+  }
+  .roundBtn {
+    width: 50px !important;
+  }
+}
 
 .respToolbar {
   background-color: white;

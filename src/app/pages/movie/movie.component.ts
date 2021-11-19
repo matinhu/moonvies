@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatAccordion } from '@angular/material/expansion';
 import { ActivatedRoute, Router } from '@angular/router';
+import { DeviceDetectorService } from 'ngx-device-detector';
 import { GlobalService } from 'src/app/services/global.service';
 import { TheMovieDbService } from 'src/app/services/the-movie-db.service';
 
@@ -27,12 +28,17 @@ export class MovieComponent implements OnInit {
     { query:'title.desc', name: 'Título (Z-A)' }, 
   ]
   public tipoFilme: string = '';
+  public deviceInfo: any;
+  public deviceType: string = '';
+  public isMobile: boolean = false;
+
   @ViewChild(MatAccordion) accordion!: MatAccordion;
   constructor(
     private aRoute: ActivatedRoute,
     private router: Router,
     private movieService: TheMovieDbService,
-    private globalService: GlobalService
+    private globalService: GlobalService,
+    private deviceService: DeviceDetectorService
   ) {}
 
   ngOnInit(): void {
@@ -55,8 +61,16 @@ export class MovieComponent implements OnInit {
         this.carregarFilmes('popular');
       }
     });
-  }
 
+    this.detectDevice()
+  }
+  
+  detectDevice() {
+    this.deviceInfo = this.deviceService.getDeviceInfo();
+    this.isMobile = this.deviceService.isMobile();
+    const isTablet = this.deviceService.isTablet();
+    this.deviceType = this.isMobile ? 'mobile' : isTablet ? 'tablet' : 'desktop';
+  }
   ajustarTipoFilme() {
     if (this.tipo === 'now_playing') {
       this.tipoFilme = 'Filmes em Cartaz';

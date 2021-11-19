@@ -25,6 +25,7 @@ export class ListaFilmesComponent implements OnInit, OnChanges, AfterViewInit {
   @Input() filmes: any = [];
   @Input() full: boolean = false;
   @Input() busca: boolean = false;
+  @Input() mobile: boolean = false;
   @Input() tipo: any;
   @Input() carregarTodos: boolean = false;
   @Input() paginador: any;
