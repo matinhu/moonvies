@@ -6,6 +6,7 @@ import { HttpService } from 'src/app/services/http.service';
 import { TheMovieDbService } from 'src/app/services/the-movie-db.service';
 import { map, startWith } from 'rxjs/operators';
 export interface Movie {
+  id: number;
   image: string;
   title: string;
   synopsis: string;
@@ -60,8 +61,10 @@ export class HomeComponent implements OnInit {
     if (filterValue.length >= 3) {
       const req: any = await this.movieService.search(filterValue);
       if (req && req.results) {
+        this.filmesBusca = [];
         for (const movie of req.results) {
           const addMovie: Movie = {
+            id: movie.id,
             title: movie.title,
             image: this.imgPath + movie.poster_path,
             synopsis: movie.overview,

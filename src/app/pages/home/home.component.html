@@ -26,11 +26,12 @@
         <mat-icon>search</mat-icon>
       </button>
       <mat-autocomplete #auto="matAutocomplete">
-        <mat-option *ngFor="let movie of filmesBusca" [value]="movie.title">
+        <mat-option *ngFor="let movie of filmesBusca" [value]="movie.title" (onSelectionChange)="irParaDetalhesFilme(movie)">
           <img
             class="example-option-img"
             aria-hidden
             [src]="movie.image"
+            onerror="src='assets/imgs/default-image-mini.png'"
             height="50"
           />
 
