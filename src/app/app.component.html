@@ -1,140 +1,255 @@
-<div *ngIf="inProgress | async">
-  <mat-progress-bar mode="indeterminate" *ngIf="inProgress | async">
-  </mat-progress-bar>
-</div>
-<div>
-  <mat-toolbar color="primary" class="sticky">
-    <div fxShow="true" fxHide.gt-sm="true">
-      <button mat-icon-button (click)="sidenav.toggle()" style="z-index: 1050">
-        <mat-icon>menu</mat-icon>
-      </button>
-    </div>
-    <div class="logo" routerLink="/"></div>
-    <div fxShow="true" fxHide.lt-md="true">
-      <app-auto-open-menu>
-        <div trigger>Filmes</div>
-        <div content>
-          <span mat-menu-item (click)="goTo('movie')"
-            ><mat-icon class="mr black">rocket_launch</mat-icon>Populares</span
-          >
-          <span mat-menu-item (click)="goTo('movie/now-playing')"
-            ><mat-icon class="mr black">star_rate</mat-icon>Em cartaz</span
-          >
-          <span mat-menu-item (click)="goTo('movie/upcoming')"
-            ><mat-icon class="mr black">campaign</mat-icon>Próximas
-            Estreias</span
-          >
-          <span mat-menu-item (click)="goTo('movie/top-rated')"
-            ><mat-icon class="mr black">thumb_up</mat-icon>Mais bem
-            avaliados</span
-          >
-        </div>
-      </app-auto-open-menu>
+<div *ngIf="1+1==3">
 
-      <!-- <button mat-button [matMenuTriggerFor]="filmes">Filmes</button>
-      <mat-menu #filmes="matMenu">
-        <button mat-menu-item>
-          <mat-icon class="mr black">rocket_launch</mat-icon>Populares
+  <div *ngIf="inProgress | async">
+    <mat-progress-bar mode="indeterminate" *ngIf="inProgress | async">
+    </mat-progress-bar>
+  </div>
+  <div>
+    <mat-toolbar color="primary" class="sticky">
+      <div fxShow="true" fxHide.gt-sm="true">
+        <button mat-icon-button (click)="sidenav.toggle()" style="z-index: 1050">
+          <mat-icon>menu</mat-icon>
         </button>
-        <button mat-menu-item>
-          <mat-icon class="mr black">star_rate</mat-icon>Em cartaz
-        </button>
-        <button mat-menu-item>
-          <mat-icon class="mr black">campaign</mat-icon>Próximas Estreias
-        </button>
-        <button mat-menu-item>
-          <mat-icon class="mr black">thumb_up</mat-icon>Mais bem avaliados
-        </button>
-      </mat-menu> -->
-    </div>
-    <div
-      class="right"
-      matTooltip="Perfil e Configurações"
-      matTooltipPosition="before"
-    >
-      <button mat-icon-button class="mr" [matMenuTriggerFor]="beforeMenu">
-        <mat-icon>account_circle</mat-icon>
-      </button>
-      <mat-menu #beforeMenu="matMenu">
-        <button mat-menu-item matTooltip="Convidado" matTooltipPosition="left">
-          <mat-icon class="mr black">lock</mat-icon> <strong>Convidado</strong>
-        </button>
-        <mat-divider></mat-divider>
-        <button mat-menu-item matTooltip="Discussões" matTooltipPosition="left">
-          Discussões
-        </button>
-        <button mat-menu-item matTooltip="Listas" matTooltipPosition="left">
-          Listas
-        </button>
-        <button mat-menu-item matTooltip="Avaliações" matTooltipPosition="left">
-          Avaliações
-        </button>
-        <button
-          mat-menu-item
-          matTooltip="Lista de Interesses"
-          matTooltipPosition="left"
-        >
-          Lista de Interesses
-        </button>
-        <mat-divider></mat-divider>
-        <button
-          mat-menu-item
-          matTooltip="Editar Perfil"
-          matTooltipPosition="left"
-        >
-          Editar Perfil
-        </button>
-        <button
-          mat-menu-item
-          matTooltip="Configurações"
-          matTooltipPosition="left"
-        >
-          Configurações
-        </button>
-        <mat-divider></mat-divider>
-        <button mat-menu-item matTooltip="hehe" matTooltipPosition="left">
-          <a
-            href="mailto:matheulls@hotmail.com?Subject=Sobre seu APP lindo.&body=Amei Parabéns Bem Vindo!"
-            target="_top"
-            ><mat-icon class="mr black">logout</mat-icon> ME CHAMA!</a
-          >
-        </button>
-      </mat-menu>
-    </div>
-  </mat-toolbar>
-  <mat-sidenav-container fxFlexFill class="example-container">
-    <div class="blurBg"></div>
-    <mat-sidenav
-      class="likeTheMovieDB"
-      color="primary"
-      #sidenav
-      fxLayout="column"
-      mode="over"
-      opened="false"
-      fxHide.gt-sm="true"
-    >
-      <div fxLayout="column w100 baseline" style="padding: 10px">
-        <button mat-button [matMenuTriggerFor]="filmes">
-          <span class="big">Filmes</span>
-        </button>
+      </div>
+      <div class="logo" routerLink="/"></div>
+      <div fxShow="true" fxHide.lt-md="true">
+        <app-auto-open-menu>
+          <div trigger>Filmes</div>
+          <div content>
+            <span mat-menu-item (click)="goTo('movie')"><mat-icon
+                class="mr black">rocket_launch</mat-icon>Populares</span>
+            <span mat-menu-item (click)="goTo('movie/now-playing')"><mat-icon class="mr black">star_rate</mat-icon>Em
+              cartaz</span>
+            <span mat-menu-item (click)="goTo('movie/upcoming')"><mat-icon class="mr black">campaign</mat-icon>Próximas
+              Estreias</span>
+            <span mat-menu-item (click)="goTo('movie/top-rated')"><mat-icon class="mr black">thumb_up</mat-icon>Mais bem
+              avaliados</span>
+          </div>
+        </app-auto-open-menu>
+
+        <!-- <button mat-button [matMenuTriggerFor]="filmes">Filmes</button>
         <mat-menu #filmes="matMenu">
-          <button mat-menu-item (click)="goTo('movie')">
+          <button mat-menu-item>
             <mat-icon class="mr black">rocket_launch</mat-icon>Populares
           </button>
-          <button mat-menu-item (click)="goTo('movie/now-playing')">
+          <button mat-menu-item>
             <mat-icon class="mr black">star_rate</mat-icon>Em cartaz
           </button>
-          <button mat-menu-item (click)="goTo('movie/upcoming')">
+          <button mat-menu-item>
             <mat-icon class="mr black">campaign</mat-icon>Próximas Estreias
           </button>
-          <button mat-menu-item (click)="goTo('movie/top-rated')">
+          <button mat-menu-item>
             <mat-icon class="mr black">thumb_up</mat-icon>Mais bem avaliados
+          </button>
+        </mat-menu> -->
+      </div>
+      <div class="right" matTooltip="Perfil e Configurações" matTooltipPosition="before">
+        <button mat-icon-button class="mr" [matMenuTriggerFor]="beforeMenu">
+          <mat-icon>account_circle</mat-icon>
+        </button>
+        <mat-menu #beforeMenu="matMenu">
+          <button mat-menu-item matTooltip="Convidado" matTooltipPosition="left">
+            <mat-icon class="mr black">lock</mat-icon> <strong>Convidado</strong>
+          </button>
+          <mat-divider></mat-divider>
+          <button mat-menu-item matTooltip="Discussões" matTooltipPosition="left">
+            Discussões
+          </button>
+          <button mat-menu-item matTooltip="Listas" matTooltipPosition="left">
+            Listas
+          </button>
+          <button mat-menu-item matTooltip="Avaliações" matTooltipPosition="left">
+            Avaliações
+          </button>
+          <button mat-menu-item matTooltip="Lista de Interesses" matTooltipPosition="left">
+            Lista de Interesses
+          </button>
+          <mat-divider></mat-divider>
+          <button mat-menu-item matTooltip="Editar Perfil" matTooltipPosition="left">
+            Editar Perfil
+          </button>
+          <button mat-menu-item matTooltip="Configurações" matTooltipPosition="left">
+            Configurações
+          </button>
+          <mat-divider></mat-divider>
+          <button mat-menu-item matTooltip="hehe" matTooltipPosition="left">
+            <a href="mailto:matheulls@hotmail.com?Subject=Sobre seu APP lindo.&body=Amei Parabéns Bem Vindo!"
+              target="_top"><mat-icon class="mr black">logout</mat-icon> ME CHAMA!</a>
           </button>
         </mat-menu>
       </div>
-    </mat-sidenav>
-    <mat-sidenav-content fxFlexFill>
-      <router-outlet></router-outlet>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
+    </mat-toolbar>
+    <mat-sidenav-container fxFlexFill class="example-container">
+      <div class="blurBg"></div>
+      <mat-sidenav class="likeTheMovieDB" color="primary" #sidenav fxLayout="column" mode="over" opened="false"
+        fxHide.gt-sm="true">
+        <div fxLayout="column w100 baseline" style="padding: 10px">
+          <button mat-button [matMenuTriggerFor]="filmes">
+            <span class="big">Filmes</span>
+          </button>
+          <mat-menu #filmes="matMenu">
+            <button mat-menu-item (click)="goTo('movie')">
+              <mat-icon class="mr black">rocket_launch</mat-icon>Populares
+            </button>
+            <button mat-menu-item (click)="goTo('movie/now-playing')">
+              <mat-icon class="mr black">star_rate</mat-icon>Em cartaz
+            </button>
+            <button mat-menu-item (click)="goTo('movie/upcoming')">
+              <mat-icon class="mr black">campaign</mat-icon>Próximas Estreias
+            </button>
+            <button mat-menu-item (click)="goTo('movie/top-rated')">
+              <mat-icon class="mr black">thumb_up</mat-icon>Mais bem avaliados
+            </button>
+          </mat-menu>
+        </div>
+      </mat-sidenav>
+      <mat-sidenav-content fxFlexFill>
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+
+
+</div>
+
+
+
+
+
+
+<!-- <div class="center">
+  <div class="heart"></div>
+
+</div> -->
+
+<div class="center">
+
+  <div class="heart3d" *ngIf="subscribeTimer > 0">
+
+    <div *ngFor="let item of list; let i = index;" [ngClass]="'rib' + i">
+    </div>
+
+
+    <div class="carregando">
+      Carregando seu presentolho <br>
+      {{subscribeTimer}}
+    </div>
+
+  </div>
+
+
+
+
+
+
+  <!-- <div class="letter" *ngIf="subscribeTimer <=0">
+    <div class="envelope" (click)="openEnvelope()">
+      <div class="envelope-flap"></div>
+      <div class="envelope-paper"></div>
+      <div class="envelope-detail"></div>
+    </div>
+    <div class="paper">
+      <div class="paper-content">
+        <div class="paper-close" (click)="closeEnvelope()">x</div>
+
+
+
+
+      </div>
+    </div>
+  </div> -->
+
+  <div class="book bookola" *ngIf="subscribeTimer <0">
+    <div id="pages" class="pages">
+      <div class="page">
+        <p>Meu amor,</p>
+      </div>
+      <div class="page"></div>
+      <div class="page">
+        <p>Ao escrever estas palavras, meu coração transborda de gratidão e carinho por você. Cada dia ao seu lado tem
+          sido
+          uma bênção, enchendo minha vida de alegria e amor sem fim.</p>
+      </div>
+      <div class="page"></div>
+      <div class="page">
+        <p>Sua presença em minha vida é como o toque suave da brisa primaveril, acalmando minha alma e elevando meu
+          espírito.</p>
+      </div>
+      <div class="page"></div>
+      <div class="page">
+        <p>Seu sorriso radiante ilumina os dias mais sombrios, lembrando-me de que o amor tudo vence e que
+          somos capazes de
+          enfrentar qualquer tempestade juntos.</p>
+      </div>
+      <div class="page"></div>
+      <div class="page">
+        <p>Em seus braços, encontro refúgio e um sentimento de pertencimento que as palavras não conseguem expressar.
+          Você é meu santuário, o lugar onde meu coração encontra paz e meu espírito encontra abrigo.
+        </p>
+      </div>
+      <div class="page"></div>
+      <div class="page">
+        <p>Seu apoio inabalável e sua fé em mim me deram forças para perseguir meus sonhos, sabendo que você está sempre
+          ao
+          meu lado.</p>
+      </div>
+      <div class="page"></div>
+      <div class="page">
+        <p>Cada momento vivido ao seu lado é um tesouro que guardo com carinho, e eu valorizo as risadas, as lágrimas e
+          as
+          inúmeras memórias que criamos juntos.</p>
+      </div>
+      <div class="page"></div>
+      <div class="page">
+        <p>Desde as aventuras espontâneas até os momentos de ternura, nosso amor continua a crescer, nutrindo nossas
+          almas
+          e nos unindo cada vez mais a cada dia que passa.</p>
+      </div>
+      <div class="page"></div>
+      <div class="page">
+        <p>Você é a personificação da beleza, tanto por dentro quanto por fora.
+          Sua bondade, compaixão e graça me inspiram a ser uma pessoa melhor.</p>
+      </div>
+      <div class="page"></div>
+      <div class="page">
+        <p> Fico maravilhado com sua força,
+          resiliência
+          e com a maneira como você faz o mundo brilhar com sua presença.</p>
+      </div>
+      <div class="page"></div>
+      <div class="page">
+        <p>Hoje, neste dia especial, quero reafirmar meu amor eterno por você.
+          Você é a peça que faltava para me completar, e sou grato além das palavras pelo amor que compartilhamos.</p>
+      </div>
+      <div class="page"></div>
+      <div class="page">
+        <p>Com você, encontrei o que me faltava, minha melhor amiga e o amor da minha vida.</p>
+      </div>
+      <div class="page"></div>
+      <div class="page">
+        <p>Feliz dia, minha querida. Que nosso amor continue a florescer e encha nossos corações de calor e felicidade.
+          Espero por uma vida inteira de amor, risos e momentos inesquecíveis juntos.</p>
+      </div>
+      <div class="page"></div>
+      <div class="page">
+        <p>Para sempre seu,</p>
+      </div>
+      <div class="page"></div>
+
+      <div class="page">
+        <p style="margin-top: 4em;">Matheus Barbosa da Silva <br> (seu marido <span style="font-size: 30px">❤️</span>).
+        </p>
+      </div>
+      <div class="page">
+        <p>cartao da shem:</p>
+        <img
+          src="assets/imgs/cardinho.png"
+          alt="cartao da shem kkkkkkkkkkj" style="max-width: 350px !important;">
+      </div>
+    </div>
+  </div>
+
+
+
+
 </div>
