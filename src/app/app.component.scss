@@ -541,6 +541,7 @@ body {
     color: #000000;
     margin-left: 10px;
     margin-right: 10px;
+    line-height: 20px !important;
   }
 }
 .page:nth-child(even) {
@@ -551,7 +552,7 @@ body {
 }
 .book .pages {
   width: 60vw;
-  height: 44vw;
+  height: 60vw;
   position: relative;
   transform-style: preserve-3d;
   backface-visibility: hidden;
@@ -565,7 +566,7 @@ body {
   position: absolute;
   top: 0;
   width: 30vw;
-  height: 44vw;
+  height: 60vw;
   transform-origin: 0 0;
   transition: transform 1.4s;
   backface-visibility: hidden;
